@@ -1,4 +1,4 @@
-# thea
+# ng_node
 [Test site](http://XXXXXX:8000/)
 user: admin
 password: admin
