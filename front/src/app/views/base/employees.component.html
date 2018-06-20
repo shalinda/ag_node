@@ -1,0 +1,56 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Employees
+        </div>
+
+        <div class="card-body">
+          <div>
+            <app-employee [employee]="selectedEmployee"></app-employee>
+          </div>
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Salary</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let employee of employees" (click)="onClick(employee)">
+                  <td>{{employee.name}}</td>
+                  <td>{{employee.age}}</td>
+                  <td>{{employee.salary}}</td>
+                  <td>{{employee.empType.name}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#">Prev</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

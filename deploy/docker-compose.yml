@@ -1,0 +1,74 @@
+version: "2"
+
+services:
+
+  postgres:
+    image: postgres:9.5
+    restart: always
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=kong
+      - POSTGRES_DB=kong
+
+  thea_ng:
+    image: ag_node:latest
+    container_name: ag_node
+#    depends_on:
+#      - kong-ee
+#      - app
+    restart: always
+    ports:
+      - 4200:80
+
+  kong-ee:
+    image: kong
+    container_name: kong
+    depends_on:
+      - postgres
+    links:
+      - app:app
+      - ag_node:ag_node    
+    restart: always
+    ports:
+      - 8000:8000
+      - 8001:8001
+#      - 8002:8002
+#      - 8003:8003
+#      - 8004:8004
+#      - 8443:8443
+#      - 8444:8444
+#      - 8445:8445
+    command: "kong start --run-migrations" #NOT PRODUCTION
+    environment:
+#      - KONG_ENFORCE_RBAC=on
+#      - KONG_RBAC_INITIAL_ADMIN_PASS=foo
+#      - KONG_LOG_LEVEL=debug
+#      - KONG_PORTAL=on
+      - KONG_PROXY_LISTEN=0.0.0.0:8000
+#      - KONG_PORTAL_API_URI=0.0.0.0:8000/portal
+#      - KONG_PORTAL_GUI_URI=localhost:8003
+      - KONG_ADMIN_LISTEN=0.0.0.0:8001
+#      - KONG_ADMIN_LISTEN_SSL=0.0.0.0:8444
+      - KONG_PG_HOST=postgres
+#      - KONG_LICENSE_DATA=${KONG_LICENSE_DATA}
+#      - KONG_VITALS=on
+#      - KONG_ANONYMOUS_REPORTS=off
+
+  app:
+    image: app:latest
+    container_name: app
+    depends_on:
+      - mongo1
+    restart: always
+    ports:
+      - 5000:5000
+
+  mongo1:
+    container_name: mongo1
+    image: mongo:3.6
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+
+

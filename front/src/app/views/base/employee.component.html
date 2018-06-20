@@ -1,0 +1,72 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Employee</strong>
+                </div>
+                <div class="card-body">                    
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input [(ngModel)]="employee.name" type="text" id="name" name="name" #name="ngModel" class="form-control" placeholder="Employee name"
+                                    required/>
+                                    <!-- #name="ngModel" -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.row-->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <input [(ngModel)]="employee.age" type="text" id="age" name="age" #age="ngModel" class="form-control" placeholder="Employee age" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.row-->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="salary">Salary</label>
+                                    <input [(ngModel)]="employee.salary" type="text" id="salary" name="salary" #salary="ngModel" class="form-control" placeholder="Employee salary"
+                                    required/>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.row-->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="empType">Type</label>
+                                    
+                                    <select [(ngModel)]="employee.empType._id" id="empType" name="empType" #empType="ngModel" class="form-control" required>
+                                        <option value="" disabled selected>>select
+                                        <option *ngFor="let empType of empTypes" [value]="empType._id">{{empType.name}}</option>
+                                    </select>
+                                    <!-- <input [(ngModel)]="employee.empType._id" type="text" class="form-control" name="empType" placeholder="Employee type">                                 -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--/.row-->
+                        <div class="row">
+                            <div class="col-sm-4">                                
+                                <button type="submit" class="btn btn-block btn-primary">Save</button>
+                            </div>
+                            <div class="col-sm-4">                                
+                                <button type="button" class="btn btn-block btn-primary" (click)="delete()">Delete</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-block btn-primary" (click)="clear()">New</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.col-->
+</div>
