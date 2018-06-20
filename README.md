@@ -1,4 +1,10 @@
 # ng_node
+
+This is a Angular 6 project based on coreUI, node js back end
+Angular front end is hosted on nginx when running with docker-compose
+Kong is used as the api gateway
+A complete docker-compose.yml is also provided to containerize and orchestrate the whole suit.
+
 [Test site](http://XXXXXX:8000/)
 user: admin
 password: admin
@@ -6,7 +12,7 @@ password: admin
 #frontend
 
     ng build 
-    docker image build -t ag_node .
+    docker imettings/profileage build -t ag_node .
     #docker run -p 4200:80 --rm ag_node
     docker tag app:latest <ecr-id>.dkr.ecr.us-east-1.amazonaws.com/app:latest
     eval $(aws ecr get-login| sed 's|https://||')
