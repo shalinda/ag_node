@@ -1,6 +1,6 @@
 # ng_node
 
-This is a Angular 6 project based on coreUI, node js back end
+This is a Angular 6 project based on [coreUI](http://coreui.io), node js back end
 Angular front end is hosted on nginx when running with docker-compose
 Kong is used as the api gateway
 A complete docker-compose.yml is also provided to containerize and orchestrate the whole suit.
