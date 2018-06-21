@@ -10,7 +10,7 @@ services:
       - POSTGRES_USER=kong
       - POSTGRES_DB=kong
 
-  thea_ng:
+  ag_node:
     image: ag_node:latest
     container_name: ag_node
 #    depends_on:
