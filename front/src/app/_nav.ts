@@ -43,11 +43,7 @@ export const navItems = [
     url: '/tx',
     icon: 'icon-puzzle',
     children: [
-      {
-        name: 'Daily Tea',
-        url: '/tx/tea',
-        icon: 'icon-puzzle'
-      },]
+      ]
   }
   //     {
   //       name: 'Forms',
