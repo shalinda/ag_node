@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class EmpTypeService {
 
-  private url = 'api/v1/empTypes';  // URL to web api
+  private url = 'http://gitlabtorq:5000/api/v1/empTypes';  // URL to web api
 
   constructor(private http: HttpClient) { }
 

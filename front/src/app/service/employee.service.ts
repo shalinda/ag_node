@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class EmployeeService {
 
-  private url = 'api/v1/employees';  // URL to web api http://192.168.1.89:8000
+  private url = 'http://gitlabtorq:5000/api/v1/employees';  // URL to web api http://192.168.1.89:8000
 
   constructor(private http: HttpClient) { }
 

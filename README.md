@@ -12,7 +12,7 @@ password: admin
 #frontend
 
     ng build 
-    docker imettings/profileage build -t ag_node .
+    docker build -t ag_node .
     #docker run -p 4200:80 --rm ag_node
     docker tag app:latest <ecr-id>.dkr.ecr.us-east-1.amazonaws.com/app:latest
     eval $(aws ecr get-login| sed 's|https://||')
