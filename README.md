@@ -1,15 +1,16 @@
 # ng_node
 
-This is a Angular 6 project based on [coreUI](http://coreui.io), node js back end
+This is a Angular 8 project based on [coreUI](http://coreui.io), node js back end
 Angular front end is hosted on nginx when running with docker-compose
 Kong is used as the api gateway
+node 12
 A complete docker-compose.yml is also provided to containerize and orchestrate the whole suit.
 
 [Test site](http://XXXXXX:8000/)
 user: admin
 password: admin
 
-#frontend
+## Frontend
 
     ng build 
     docker build -t ag_node .
@@ -18,30 +19,25 @@ password: admin
     eval $(aws ecr get-login| sed 's|https://||')
     docker push <ecr-id>.dkr.ecr.us-east-1.amazonaws.com/app:latest --disable-content-trust  
 
-#backend
-
-    docker build -t ag_node .
-    docker tag ag_node:latest <ecr-id>.dkr.ecr.us-east-1.amazonaws.com/thea_ng:latest
-    eval $(aws ecr get-login| sed 's|https://||')
-    docker push <ecr-id>.dkr.ecr.us-east-1.amazonaws.com/thea_ng:latest --disable-content-trust
+## Backend
 
 #deploy
     docker-compose up ag_node&
 
-#Kong setup
+# Kong setup
   prerequisit    
     
     curl -i -X DELETE --url http://localhost:8001/apis/ui
     curl -i -X DELETE --url http://localhost:8001/apis/api
 
-    curl -i -X POST --url http://localhost:8001/apis --data name=ui --data upstream_url=http://thea_ng --data uris=/
+    curl -i -X POST --url http://localhost:8001/apis --data name=ui --data upstream_url=http://ag_node --data uris=/
     curl -i -X POST --url http://localhost:8001/apis --data name=api --data upstream_url=http://app:5000/api --data uris=/api
 
 
-#AWS
+# AWS
     docker pull <ecr-id>.dkr.ecr.us-east-1.amazonaws.com/app:latest --disable-content-trust
 
-#Mongo hands on
+# Mongo hands on
 
     mongo --port=27017
 
