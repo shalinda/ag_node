@@ -9,7 +9,9 @@
     "server:dev": " NODE_ENV=dev nodemon --watch  server.js",
     "server:prod": "NODE_ENV=prod nodemon  server.js",
     "start": "npm run server",
-    "start:dev": "npm start"
+    "start:dev": "npm start",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "REST",
@@ -23,11 +25,12 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.2",
     "joi": "^13.3.0",
-    "mongoose": "^5.2.12"
+    "mongoose": "^5.2.12",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "morgan": "^1.9.1",
-    "nodemon": "^1.14.12",
-    "snyk": "^1.230.2"
-  }
+    "nodemon": "^1.14.12"
+  },
+  "snyk": true
 }
