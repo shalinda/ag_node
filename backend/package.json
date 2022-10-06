@@ -28,6 +28,6 @@
   "devDependencies": {
     "morgan": "^1.9.1",
     "nodemon": "^1.14.12",
-    "snyk": "^1.230.2"
+    "snyk": "^1.996.0"
   }
 }
