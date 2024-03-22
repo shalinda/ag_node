@@ -19,7 +19,7 @@
   "author": "Shalinda Ranasinghe",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.2",
     "joi": "^13.3.0",
