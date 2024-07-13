@@ -35,7 +35,7 @@
     "@angular/router": "6.0.2",
     "@angular/typescript": "^2.0.0-5d0e199",
     "@coreui/angular": "^2.0.0-rc.0",
-    "@coreui/coreui": "^2.0.1",
+    "@coreui/coreui": "^3.0.0",
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
     "@coreui/icons": "^0.1.1",
     "chart.js": "2.7.2",
