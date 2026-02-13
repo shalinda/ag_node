@@ -20,8 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^3.0.6",
-    "body-parser": "^1.18.3",
-    "express": "^4.16.2",
+    "body-parser": "^1.20.4",
+    "express": "^4.22.0",
     "joi": "^13.3.0",
     "mongoose": "^5.2.12"
   },
